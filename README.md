@@ -18,7 +18,7 @@
 
 
 
-#Instruction to run react application
+# Instruction to run react application
 1. Take a clone from the repository
 2. run command `npm i` inside the project directory.
 3. after running above command, run `npm start`
