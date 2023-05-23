@@ -1,0 +1,32 @@
+body {
+    background-color: rgb(255, 255, 228);
+}
+.container {
+    width: 50%;
+    height: auto;
+    margin: auto;
+    padding-top: 20px;
+    overflow: hidden;
+}
+.login-card {
+    top: 40%;
+    left: 40%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+    flex-direction: column;
+}
+
+.label {
+    margin: 5px;
+}
+
+.input-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+}

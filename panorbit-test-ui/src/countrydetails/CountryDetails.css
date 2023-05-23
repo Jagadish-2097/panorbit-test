@@ -1,0 +1,9 @@
+.common {
+    display: flex;
+    justify-content: center;
+}
+
+.common_head {
+    display: flex;
+    justify-content: center;
+}
