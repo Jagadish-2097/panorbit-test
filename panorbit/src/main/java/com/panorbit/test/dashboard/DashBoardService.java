@@ -12,6 +12,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.panorbit.test.exceptionhandler.UnauthorizedException;
 import com.panorbit.test.model.DataHolder;
 import com.panorbit.test.model.DetailedResponse;
 import com.panorbit.test.user.OtpGenerator;
@@ -84,9 +85,18 @@ public class DashBoardService {
 	}
 
 	public boolean validateSession(String session) {
-		String email = otpGenerator.getOPTByKey(session);
-		String sessionEmail = new String(Base64.getDecoder().decode(session));
-		logger.info("Inside the validate session "+email+" decoded string is "+sessionEmail);
-		return email.equals(sessionEmail);
+		try {
+			String email = otpGenerator.getOPTByKey(session);
+			if (email != null) {
+
+				String sessionEmail = new String(Base64.getDecoder().decode(session));
+				logger.info("Inside the validate session "+email+" decoded string is "+sessionEmail);
+				return email.equals(sessionEmail);
+			} else {
+				throw new UnauthorizedException("Please login again");
+			}
+		} catch (Exception e) {
+			throw new UnauthorizedException("Please login again");
+		}
 	}
 }

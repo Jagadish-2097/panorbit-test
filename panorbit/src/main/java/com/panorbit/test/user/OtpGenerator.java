@@ -23,7 +23,7 @@ public class OtpGenerator {
 	public OtpGenerator() {
 		super();
 
-		otpCache = CacheBuilder.newBuilder().expireAfterWrite(12, TimeUnit.HOURS)
+		otpCache = CacheBuilder.newBuilder().expireAfterWrite(60, TimeUnit.MINUTES)
 				.build(new CacheLoader<String, String>() {
 					@Override
 					public String load(String key) throws Exception {

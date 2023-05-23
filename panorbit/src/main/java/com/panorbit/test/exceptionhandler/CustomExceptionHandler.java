@@ -58,4 +58,12 @@ public class CustomExceptionHandler {
 				new GenericResponseModel<Object, ErrorResponse>(null, new ErrorResponse(ex.getMessage())),
 				HttpStatus.BAD_REQUEST);
 	}
+	
+	@ExceptionHandler(UnauthorizedException.class)
+	public GenericResponse<GenericResponseModel<Object, ErrorResponse>> unAuthorizedException(
+			UnauthorizedException ex) {
+		return new GenericResponse<GenericResponseModel<Object, ErrorResponse>>(
+				new GenericResponseModel<Object, ErrorResponse>(null, new ErrorResponse(ex.getMessage())),
+				HttpStatus.UNAUTHORIZED);
+	}
 }
