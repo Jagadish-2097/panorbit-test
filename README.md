@@ -5,7 +5,8 @@
 1. Download and install java 17 and latest maven.
 2. Clone the project and edit email.properties file and configure you own email and password.
 3. Edit dbconfig.properties file and Configure the Mysql database.
-4. Run the main application.
+4. Execute the provided sql dump in src/main/resources/world.sql.
+5. Run the main application.
 
 # dependency list
 *. Spring boot 3.1.0.
